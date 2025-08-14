@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | Credit Approval Predictor</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f0f4f8;
+    }
+    .navbar {
+      background-color: #2c3e50;
+    }
+    .navbar-brand, .nav-link {
+      color: white !important;
+    }
+    .container {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+    .card {
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <a class="navbar-brand" href="#">Credit Predictor</a>
+  <div class="ml-auto">
+    <a class="nav-link d-inline" href="/">Home</a>
+    <a class="nav-link d-inline" href="/predict">Predict</a>
+    <a class="nav-link d-inline active" href="/about">About</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="card p-4">
+    <h2 class="text-center mb-4">About the Credit Approval Predictor</h2>
+    <p class="lead">
+      This web application predicts whether a customer's loan or credit request is likely to be approved, based on specific financial and personal inputs.
+    </p>
+    <hr>
+    <h4>🔍 Why Use This App?</h4>
+    <ul>
+      <li>Helps banks/financial institutions make quick pre-screening decisions.</li>
+      <li>Provides customers with a general idea of their credit approval likelihood.</li>
+      <li>Demonstrates real-world application of machine learning models.</li>
+    </ul>
+
+    <h4>🛠️ How It Works</h4>
+    <ol>
+      <li>Enter user information like job type, marital status, education, age, etc.</li>
+      <li>The model processes the data and predicts the approval outcome.</li>
+      <li>Get instant feedback on the result.</li>
+    </ol>
+
+    <h4>🧠 Technologies Used</h4>
+    <ul>
+      <li><strong>Frontend:</strong> HTML, CSS, Bootstrap</li>
+      <li><strong>Backend:</strong> Python, Flask</li>
+      <li><strong>Machine Learning:</strong> Scikit-learn, Pandas, NumPy</li>
+    </ul>
+
+    <p class="mt-3 text-muted">
+      📊 This project is part of a practical data science exercise to integrate predictive analytics into a real-life scenario.
+    </p>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 Credit Predictor | Built with ❤️ using Flask & ML
+</footer>
+
+</body>
+</html>

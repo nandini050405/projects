@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Credit Approval Predictor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #1787f6;
+      margin: 0;
+    }
+    .navbar {
+      background-color: #931ef3;
+    }
+    .navbar-brand, .nav-link {
+      color: rgba(166, 198, 38, 0.589) !important;
+    }
+    .header {
+      text-align: center;
+      padding: 60px 20px;
+      background: #d2bba0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      color: #2182e3;
+    }
+    .header p {
+      font-size: 1.2rem;
+      color: #332cc1;
+    }
+    .btn-predict {
+      margin-top: 30px;
+    }
+    footer {
+      background-color: #2c3e50;
+      color: rgb(166, 224, 181);
+      text-align: center;
+      padding: 15px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="#">Credit Predictor</a>
+    <div class="ml-auto">
+      <a class="nav-link d-inline" href="/">Home</a>
+      <a class="nav-link d-inline" href="/predict">Predict</a>
+      <a class="nav-link d-inline" href="/about">About</a>
+    </div>
+  </nav>
+
+  <div class="header">
+    <h1>Welcome to the Credit Approval Prediction App</h1>
+    <p>Use AI and data science to instantly check if a customer's credit might be approved based on personal and financial information.</p>
+    <a href="/predict" class="btn btn-primary btn-lg btn-predict">Start Prediction</a>
+  </div>
+
+  <footer>
+    &copy; 2025 Credit Predictor | Powered by Flask & Machine Learning
+  </footer>
+
+</body>
+</html>

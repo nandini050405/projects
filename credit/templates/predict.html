@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Predict | Credit Approval</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #08b981;
+    }
+    .navbar {
+      background-color: #6fcab5;
+    }
+    .navbar-brand, .nav-link {
+      color: rgb(95, 17, 39) !important;
+    }
+    .container {
+      max-width: 650px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+    .card {
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      background-color: rgb(9, 213, 148);
+    }
+    footer {
+      background-color: #2c3e50;
+      color: rgb(217, 79, 79);
+      text-align: center;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <a class="navbar-brand" href="#">Credit Predictor</a>
+  <div class="ml-auto">
+    <a class="nav-link d-inline" href="/">Home</a>
+    <a class="nav-link d-inline active" href="/predict">Predict</a>
+    <a class="nav-link d-inline" href="/about">About</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="card">
+    <h3 class="text-center mb-4">Credit Approval Form</h3>
+    <form action="/result" method="POST">
+      <div class="form-group">
+        <label for="job">Job (0=Unemployed, 1=Employed, 2=Self-employed)</label>
+        <input type="number" class="form-control" id="job" name="job" min="0" max="2" required>
+      </div>
+      <div class="form-group">
+        <label for="marital">Marital Status (0=Single, 1=Married, 2=Divorced)</label>
+        <input type="number" class="form-control" id="marital" name="marital" min="0" max="2" required>
+      </div>
+      <div class="form-group">
+        <label for="education">Education (0=Primary, 1=Secondary, 2=Higher)</label>
+        <input type="number" class="form-control" id="education" name="education" min="0" max="2" required>
+      </div>
+      <div class="form-group">
+        <label for="housing">Housing Loan (0=No, 1=Yes)</label>
+        <input type="number" class="form-control" id="housing" name="housing" min="0" max="1" required>
+      </div>
+      <div class="form-group">
+        <label for="approval">Personal Loan (0=No, 1=Yes)</label>
+        <input type="number" class="form-control" id="approval" name="approval" min="0" max="1" required>
+      </div>
+      <div class="form-group">
+        <label for="age">Age (years)</label>
+        <input type="number" class="form-control" id="age" name="age" min="18" max="100" required>
+      </div>
+      <div class="form-group">
+        <label for="balance">Account Balance</label>
+        <input type="number" class="form-control" id="balance" name="balance" required>
+      </div>
+      <div class="form-group">
+        <label for="duration">Call Duration (in seconds)</label>
+        <input type="number" class="form-control" id="duration" name="duration" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Predict Approval</button>
+    </form>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 Credit Approval Predictor | Powered by Flask & ML
+</footer>
+
+</body>
+</html>
