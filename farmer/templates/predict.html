@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Predict Crop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef6f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 60px auto;
+            background-color: #fff;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            color: #2e7d32;
+            margin-bottom: 30px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input[type="number"] {
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 12px;
+            font-size: 16px;
+            background-color: #43a047;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2e7d32;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            color: #2e7d32;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🌾 Enter Farming Details</h2>
+        <form method="POST">
+            <input type="number" name="n" placeholder="Nitrogen (N)" step="any" required>
+            <input type="number" name="p" placeholder="Phosphorus (P)" step="any" required>
+            <input type="number" name="k" placeholder="Potassium (K)" step="any" required>
+            <input type="number" name="temperature" placeholder="Temperature (°C)" step="any" required>
+            <input type="number" name="humidity" placeholder="Humidity (%)" step="any" required>
+            <input type="number" name="ph" placeholder="Soil pH" step="any" required>
+            <input type="number" name="rainfall" placeholder="Rainfall (mm)" step="any" required>
+            <button type="submit">🌱 Predict Crop</button>
+        </form>
+        <a href="/">&larr; Back to Home</a>
+    </div>
+</body>
+</html>

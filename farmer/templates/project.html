@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Laptop Price Predictor 💻</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet">
+  <style>
+    body {
+      background-color: #3579dd;
+      color: #f0f6fc;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .form-control, .form-select {
+      background-color: #0fbf58dd;
+      color: #f0f6fc;
+      border: 1px solid #0af93ac4;
+    }
+
+    .form-control:focus, .form-select:focus {
+      box-shadow: 0 0 5px #58a6ff;
+      border-color: #58a6ff;
+    }
+
+    .card {
+      background-color: #e21818;
+      border: 1px solid #a204f7;
+      border-radius: 12px;
+    }
+
+    .btn-primary {
+      background-color: #238636;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #2ea043;
+    }
+
+    .title {
+      font-weight: bold;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container my-5">
+  <div class="card p-4 shadow-lg">
+    <div class="title text-center">Laptop Price Predictor 💻</div>
+    <form method="post" action="{{ url_for('predict') }}">
+      <div class="row g-3">
+        <div class="col-md-4">
+          <label>Brand</label>
+          <select class="form-select" name="brand" required>
+            <option selected disabled>Select Brand</option>
+            <option>ASUS</option><option>Lenovo</option><option>acer</option><option>Avita</option>
+            <option>HP</option><option>DELL</option><option>MSI</option><option>APPLE</option>
+          </select>
+        </div>
+
+        <div class="col-md-4">
+          <label>Processor Brand</label>
+          <select class="form-select" name="processor_brand" required>
+            <option>Intel</option><option>M1</option><option>AMD</option>
+          </select>
+        </div>
+
+        <div class="col-md-4">
+          <label>Processor Name</label>
+          <select class="form-select" name="processor_name" required>
+            <option>i3</option><option>i5</option><option>i7</option>
+            <option>Ryzen 3</option><option>Ryzen 5</option><option>Ryzen 7</option>
+          </select>
+        </div>
+
+        <div class="col-md-4">
+          <label>RAM (GB)</label>
+          <input class="form-control" type="number" name="ram" min="2" max="64" required>
+        </div>
+
+        <div class="col-md-4">
+          <label>HDD (GB)</label>
+          <input class="form-control" type="number" name="hdd" min="0" step="128" required>
+        </div>
+
+        <div class="col-md-4">
+          <label>SSD (GB)</label>
+          <input class="form-control" type="number" name="ssd" min="0" step="128" required>
+        </div>
+
+        <div class="col-md-4">
+          <label>Weight (kg)</label>
+          <input class="form-control" type="number" name="weight" step="0.1" min="0.5" max="5.0" required>
+        </div>
+
+        <div class="col-md-4">
+          <label>OS</label>
+          <select class="form-select" name="os" required>
+            <option>Windows</option><option>Dos</option><option>Mac</option>
+          </select>
+        </div>
+
+        <div class="col-md-4">
+          <label>OS Bit</label>
+          <select class="form-select" name="os_bit" required>
+            <option value="64">64</option>
+            <option value="32">32</option>
+          </select>
+        </div>
+
+        <div class="col-md-4">
+          <label>Warranty (Years)</label>
+          <input class="form-control" type="number" name="warranty" min="0" max="5" required>
+        </div>
+
+        <div class="col-md-4">
+          <label>Graphics (GB)</label>
+          <input class="form-control" type="number" name="graphics_card" min="0" max="12" required>
+        </div>
+
+        <div class="col-md-4">
+          <label>Touchscreen</label>
+          <select class="form-select" name="touchscreen" required>
+            <option value="1">Yes</option>
+            <option value="0" selected>No</option>
+          </select>
+        </div>
+
+        <div class="col-md-4">
+          <label>MS Office</label>
+          <select class="form-select" name="msoffice" required>
+            <option value="1">Yes</option>
+            <option value="0" selected>No</option>
+          </select>
+        </div>
+
+        <div class="col-md-4">
+          <label>Rating (1-5)</label>
+          <input class="form-control" type="number" step="0.1" name="rating" min="1" max="5" required>
+        </div>
+
+        <div class="col-md-4">
+          <label>Screen Size (inches)</label>
+          <input class="form-control" type="number" step="0.1" name="screen_size" min="11" max="18" required>
+        </div>
+      </div>
+
+      <div class="text-center mt-4">
+        <button class="btn btn-primary px-5">Predict Price</button>
+      </div>
+    </form>
+
+    {% if prediction %}
+    <div class="alert alert-success mt-4 text-center">
+      <h4>Predicted Laptop Price: ₹{{ prediction }}</h4>
+    </div>
+    {% endif %}
+  </div>
+</div>
+
+</body>
+</html>
